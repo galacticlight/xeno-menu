@@ -1,7 +1,7 @@
 {
   "name": "xeno-menu",
   "version": "1.0.0",
-  "description": "Xenogears-inspired desktop menu and system dashboard. Secure, cross-platform (macOS primary, Windows 11 supported).",
+  "description": "Xenogears-inspired desktop menu. macOS Apple Silicon primary, Windows 11 supported.",
   "main": "src/main/main.js",
   "author": "galacticlight",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "start": "electron .",
     "dev": "electron . --enable-logging",
     "build": "electron-builder",
-    "build:mac": "electron-builder --mac",
+    "build:mac": "electron-builder --mac --arm64",
     "build:win": "electron-builder --win",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
@@ -37,9 +37,10 @@
       "target": [
         {
           "target": "dmg",
-          "arch": ["arm64", "x64"]
+          "arch": ["arm64"]
         }
       ],
+      "artifactName": "${productName}-${version}-mac-silicon.${ext}",
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "entitlements": "build/entitlements.mac.plist",
