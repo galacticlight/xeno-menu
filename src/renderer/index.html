@@ -9,36 +9,24 @@
 </head>
 <body>
   <div id="app" class="xeno-window">
-    <!-- Decorative outer frame inspired by Xenogears menu windows -->
     <div class="frame-outer">
       <div class="frame-inner">
-        <!-- Title / Header -->
         <header class="menu-header">
           <div class="header-ornament left"></div>
           <h1 class="title">XENOMENU</h1>
           <div class="header-ornament right"></div>
           <button id="btn-close" class="window-btn" title="Hide (Esc)">✕</button>
         </header>
-
         <main class="menu-body">
-          <!-- Left: Command list (like main menu options) -->
           <nav class="command-list" id="command-list" role="menu" aria-label="Main commands">
             <div class="list-header">COMMAND</div>
-            <ul id="menu-items">
-              <!-- Populated by JS -->
-            </ul>
+            <ul id="menu-items"></ul>
           </nav>
-
-          <!-- Right: Party / System Status (inspired by character status panel) -->
           <section class="status-panel" id="status-panel" aria-label="System status">
             <div class="list-header">STATUS</div>
-            <div id="party-status" class="party-status">
-              <!-- Dynamic status cards -->
-            </div>
+            <div id="party-status" class="party-status"></div>
           </section>
         </main>
-
-        <!-- Footer: G (resources) + Time -->
         <footer class="menu-footer">
           <div class="footer-item gold">
             <span class="label">FREE</span>
@@ -52,13 +40,9 @@
             <span id="footer-os" class="value small">--</span>
           </div>
         </footer>
-
-        <!-- Cursor / Selection indicator (red triangle style) -->
         <div id="cursor" class="cursor" aria-hidden="true">▶</div>
       </div>
     </div>
-
-    <!-- Detail / Sub-menu overlay -->
     <div id="detail-overlay" class="detail-overlay hidden">
       <div class="detail-frame">
         <div class="detail-header">
@@ -69,7 +53,7 @@
       </div>
     </div>
   </div>
-
+  <script src="sfx.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
